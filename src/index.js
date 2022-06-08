@@ -37,6 +37,18 @@ class Growth extends React.Component {
   }
 }
 
+class Etc extends React.Component {
+  render() {
+    return <div>その他データ</div>;
+  }
+}
+
+class Memo extends React.Component {
+  render() {
+    return <div>メモ</div>;
+  }
+}
+
 // ========================================
 
 const personal = ReactDOM.createRoot(document.getElementById("personal"));
@@ -56,3 +68,9 @@ trade.render(<Trade />);
 
 const growth = ReactDOM.createRoot(document.getElementById("growth"));
 growth.render(<Growth />);
+
+const etc = ReactDOM.createRoot(document.getElementById("etc"));
+etc.render(<Etc />);
+
+const memo = ReactDOM.createRoot(document.getElementById("memo"));
+memo.render(<Memo />);
