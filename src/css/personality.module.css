@@ -1,0 +1,56 @@
+.nameBox {
+  text-align: center;
+  /* ボックス */
+  border: 4px double #ddd;
+  margin: 2em 0;
+  padding: 2em;
+}
+
+.personalData {
+  display: flex;
+  text-align: center;
+  /* ボックス */
+  border: 4px double #ddd;
+  margin: 2em 0;
+  padding: 2em;
+}
+
+.personalDetail {
+  display: flex;
+  text-align: center;
+  /* ボックス */
+  border: 4px double #ddd;
+  margin: 2em 0;
+  padding: 2em;
+}
+
+dl {
+  display: flex;
+  text-align: center;
+  margin: 2em;
+}
+
+/* 名称：詳細 */
+dt {
+  display: flex;
+  text-align: center;
+  /* ボックス */
+  margin: 2em auto;
+  padding: 1em;
+  background-color: #fff; /* 背景色 */
+  border: 1px solid #ccc; /* 枠線 */
+}
+
+.title {
+  text-align: left;
+  flex-flow: column;
+}
+
+.title2 {
+  text-align: right;
+}
+
+div2 {
+  display: flex;
+  text-align: center;
+}
