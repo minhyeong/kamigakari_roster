@@ -1,56 +1,32 @@
-.nameBox {
-  text-align: center;
-  /* ボックス */
-  border: 4px double #ddd;
-  margin: 2em 0;
-  padding: 2em;
+.Name_Box {
+  margin: auto;
+  color: #364e96;
+  padding: 0.5em 0 0.5em 0.5em; /*上下の余白*/
+  border-top: solid 3px #364e96; /*上線*/
+  border-bottom: solid 3px #364e96; /*下線*/
 }
 
-.personalData {
-  display: flex;
-  text-align: center;
-  /* ボックス */
-  border: 4px double #ddd;
-  margin: 2em 0;
-  padding: 2em;
-}
-
-.personalDetail {
-  display: flex;
-  text-align: center;
-  /* ボックス */
-  border: 4px double #ddd;
-  margin: 2em 0;
-  padding: 2em;
+.Detail_Box {
+  margin: auto;
 }
 
 dl {
   display: flex;
-  text-align: center;
-  margin: 2em;
+  padding: 0.5em 0 0.5em 0.5em; /*上下の余白*/
+  border-top: solid 0.1px #364e96; /*上線*/
+  border-bottom: solid 0.1px #364e96; /*下線*/
+  border-right: solid 0.1px #364e96; /*上線*/
+  border-left: solid 0.1px #364e96; /*下線*/
 }
 
-/* 名称：詳細 */
 dt {
-  display: flex;
-  text-align: center;
-  /* ボックス */
-  margin: 2em auto;
-  padding: 1em;
-  background-color: #fff; /* 背景色 */
-  border: 1px solid #ccc; /* 枠線 */
+  margin-right: 0.5em;
 }
 
 .title {
-  text-align: left;
-  flex-flow: column;
-}
-
-.title2 {
-  text-align: right;
-}
-
-div2 {
   display: flex;
-  text-align: center;
+}
+
+twoStyle {
+  display: flex;
 }

@@ -8,7 +8,7 @@ import Equipment from "./components/equipment";
 import Talents from "./components/talents";
 
 class Root extends React.Component {
-  render() {
+  render = () => {
     return (
       <div>
         <Personal />
@@ -17,7 +17,7 @@ class Root extends React.Component {
         <Talents />
       </div>
     );
-  }
+  };
 }
 
 // ====================================================================== //

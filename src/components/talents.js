@@ -1,7 +1,7 @@
 import React from "react";
 
 export default class Talents extends React.Component {
-  render() {
+  render = () => {
     return <div>タレント</div>;
-  }
+  };
 }
