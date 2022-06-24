@@ -10,12 +10,12 @@ import Talents from "./components/talents";
 class Root extends React.Component {
   render = () => {
     return (
-      <div>
+      <>
         <Personal />
         <Ability />
         <Equipment />
         <Talents />
-      </div>
+      </>
     );
   };
 }
