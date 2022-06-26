@@ -1,125 +1,147 @@
-import React from "react";
-import style from "../css/personality.module.css";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import ListSubheader from "@mui/material/ListSubheader";
+import Select from "@mui/material/Select";
+import TextField from "@mui/material/TextField";
+import FormHelperText from "@mui/material/FormHelperText";
 
-class Name extends React.Component {
-  #name = "氏名";
-  render = () => {
-    return <h1 className={style.Name_Box}>{this.#name}</h1>;
+class Race extends React.Component {
+  #race = {
+    basis: "基本",
+    b_1: "封神",
+    b_2: "夜魔",
+    b_3: "半妖",
+    b_4: "魔術師",
+    b_5: "人間",
+    requiem: "神魂のレクイエム",
+    r_1: "竜王",
+    r_2: "神霊",
+    r_3: "英魂",
+    damocles: "ダモクレスの機神",
+    d_1: "サイボーグ",
+    d_2: "魔眼",
+    d_3: "マレビト",
+    guardians: "四神ガーディアンズ",
+    g_1: "サキミタマ",
+    exodus: "神機エクソダス",
+    e_1: "アンドロイド",
+    e_2: "ホムンクルス",
   };
-}
+  #book = ["basis", "requiem", "damocles", "damocles", "guardians", "exodus"];
+  #raceMenu = [];
 
-class Introduction extends React.Component {
-  #level = 6;
-  #race = "種族";
-  #title = {
-    main: "主称号",
-    sub: "副称号",
-    A: "A",
-    B: "B",
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = { race: "" };
+
+    for (let i in this.#race) {
+      if (this.#book.includes(i)) {
+        this.#raceMenu.push(<ListSubheader>{this.#race[i]}</ListSubheader>);
+      } else {
+        this.#raceMenu.push(
+          <MenuItem value={this.#race[i]}>{this.#race[i]}</MenuItem>
+        );
+      }
+    }
+  }
+
   render = () => {
     return (
-      <div className={style.title}>
-        <dl>
-          <dt>世界干渉Lv</dt>
-          <dt>{this.#level}</dt>
-        </dl>
-        <dl>
-          <dt>種族</dt>
-          <dt>{this.#race}</dt>
-        </dl>
-        <dl>
-          <dt>称号</dt>
-          <dt>
-            <div className={style.title}>
-              <dt>{this.#title.main}</dt>
-              <dt>{this.#title.A}</dt>
-            </div>
-            <div className={style.title}>
-              <dt>{this.#title.sub}</dt>
-              <dt>{this.#title.B}</dt>
-            </div>
-          </dt>
-        </dl>
-      </div>
+      <>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-label">種族</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={this.state.race}
+            label="種族"
+            onChange={(e) => this.setState({ race: e.target.value })}
+          >
+            {this.#raceMenu}
+          </Select>
+        </FormControl>
+      </>
     );
   };
 }
 
-class Affiliation extends React.Component {
-  #occupation = "化身";
-  #organization = "フリーランス";
+class CharacterName extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: "" };
+  }
+
   render = () => {
     return (
-      <div>
-        <dl>
-          <dt>表の職業</dt>
-          <dt>{this.#occupation}</dt>
-        </dl>
-        <dl>
-          <dt>所属組織</dt>
-          <dt>{this.#organization}</dt>
-        </dl>
-      </div>
+      <>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <TextField
+            id="outlined-multiline-flexible"
+            label="キャラクター名"
+            multiline
+            maxRows={4}
+            value={this.state.name}
+            onChange={(e) => this.setState({ name: e.target.value })}
+          />
+        </FormControl>
+      </>
     );
   };
 }
 
-class Detail extends React.Component {
-  #paersonalStatus = {
-    age: 200,
-    gender: "男",
-    height: 180,
-    weight: 85,
-    eyeColor: "青",
-    hairColor: "黒",
-    skinColor: "肌色",
-    other: "ファンブル帝王",
-  };
+class AbilityType extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { type: "" };
+  }
+
   render = () => {
     return (
-      <div>
-        <twoStyle>
-          <dl>
-            <dt>年齢</dt>
-            <dt>{this.#paersonalStatus.age}</dt>
-          </dl>
-          <dl>
-            <dt>性別</dt>
-            <dt>{this.#paersonalStatus.gender}</dt>
-          </dl>
-        </twoStyle>
-        <twoStyle>
-          <dl>
-            <dt>身長</dt>
-            <dt>{this.#paersonalStatus.height}</dt>
-          </dl>
-          <dl>
-            <dt>体重</dt>
-            <dt>{this.#paersonalStatus.weight}</dt>
-          </dl>
-        </twoStyle>
-        <twoStyle>
-          <dl>
-            <dt>瞳の色</dt>
-            <dt>{this.#paersonalStatus.eyeColor}</dt>
-          </dl>
-          <dl>
-            <dt>髪の色</dt>
-            <dt>{this.#paersonalStatus.hairColor}</dt>
-          </dl>
-        </twoStyle>
-        <twoStyle>
-          <dl>
-            <dt>肌の色</dt>
-            <dt>{this.#paersonalStatus.skinColor}</dt>
-          </dl>
-          <dl>
-            <dt>その他</dt>
-            <dt>{this.#paersonalStatus.other}</dt>
-          </dl>
-        </twoStyle>
-      </div>
+      <>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel id="demo-simple-select-label">能力値タイプ</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={this.state.type}
+            label="能力値タイプ"
+            onChange={(e) => this.setState({ type: e.target.value })}
+          >
+            <MenuItem value={"戦士"}>戦士</MenuItem>
+            <MenuItem value={"汎用"}>汎用</MenuItem>
+            <MenuItem value={"魔法"}>魔法</MenuItem>
+          </Select>
+        </FormControl>
+      </>
+    );
+  };
+}
+
+class Player extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: "" };
+  }
+
+  render = () => {
+    return (
+      <>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <TextField
+            id="outlined-multiline-flexible"
+            label="プレイヤー"
+            multiline
+            maxRows={4}
+            value={this.state.name}
+            onChange={(e) => this.setState({ name: e.target.value })}
+          />
+        </FormControl>
+      </>
     );
   };
 }
@@ -127,14 +149,14 @@ class Detail extends React.Component {
 export default class Personality extends React.Component {
   render = () => {
     return (
-      <div>
-        <Name />
-        <Introduction />
-        <div className={style.title}>
-          <Affiliation />
-          <Detail />
-        </div>
-      </div>
+      <>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+          <Race />
+          <CharacterName />
+          <AbilityType />
+          <Player />
+        </FormControl>
+      </>
     );
   };
 }
