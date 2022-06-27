@@ -1,20 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-// キャラシコンポーネント
-import Personal from "./components/personality";
-import Ability from "./components/ability";
-import Equipment from "./components/equipment";
-import Talents from "./components/talents";
+import Personal from "./personality/personality";
 
 class Root extends React.Component {
   render = () => {
     return (
       <>
         <Personal />
-        <Ability />
-        <Equipment />
-        <Talents />
       </>
     );
   };
