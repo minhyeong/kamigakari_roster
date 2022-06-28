@@ -1,7 +1,6 @@
 import * as React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import ListSubheader from "@mui/material/ListSubheader";
 
@@ -47,18 +46,16 @@ export default class SubTitle extends React.Component {
   render = () => {
     return (
       <>
-        <FormControl sx={{ m: 1, minWidth: 250 }}>
-          <InputLabel id="demo-simple-select-label">サブ称号</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={this.state.type}
-            label="サブ称号"
-            onChange={(e) => this.setState({ type: e.target.value })}
-          >
-            {this.#titleMenu}
-          </Select>
-        </FormControl>
+        <InputLabel id="demo-simple-select-label">サブ称号</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={this.state.type}
+          label="サブ称号"
+          onChange={(e) => this.setState({ type: e.target.value })}
+        >
+          {this.#titleMenu}
+        </Select>
       </>
     );
   };

@@ -1,7 +1,6 @@
 import * as React from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import ListSubheader from "@mui/material/ListSubheader";
 import Select from "@mui/material/Select";
 
@@ -49,18 +48,16 @@ export default class Race extends React.Component {
   render = () => {
     return (
       <>
-        <FormControl sx={{ m: 1, minWidth: 250 }}>
-          <InputLabel id="demo-simple-select-label">種族</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={this.state.race}
-            label="種族"
-            onChange={(e) => this.setState({ race: e.target.value })}
-          >
-            {this.#raceMenu}
-          </Select>
-        </FormControl>
+        <InputLabel id="demo-simple-select-label">種族</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={this.state.race}
+          label="種族"
+          onChange={(e) => this.setState({ race: e.target.value })}
+        >
+          {this.#raceMenu}
+        </Select>
       </>
     );
   };

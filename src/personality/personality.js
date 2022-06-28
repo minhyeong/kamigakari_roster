@@ -1,4 +1,6 @@
 import * as React from "react";
+import FormControl from "@mui/material/FormControl";
+
 import Race from "./components/race";
 import CharacterName from "./components/character-name";
 import AbilityType from "./components/ability-type";
@@ -8,6 +10,7 @@ import SubTitle from "./components/title-sub";
 import Occupation from "./components/occupation";
 import Affiliation from "./components/affiliation";
 import Grid from "@mui/material/Grid";
+import UploadImg from "./components/upload-img";
 
 export default class Personality extends React.Component {
   render = () => {
@@ -19,39 +22,56 @@ export default class Personality extends React.Component {
           justifyContent="left"
           alignItems="center"
         >
-          <Race />
-          <CharacterName />
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <Race />
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <CharacterName />
+          </FormControl>
         </Grid>
-
         <Grid
           container
           direction="row"
           justifyContent="left"
           alignItems="center"
         >
-          <AbilityType />
-          <PlayerName />
-        </Grid>
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <AbilityType />
+          </FormControl>
 
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <PlayerName />
+          </FormControl>
+        </Grid>
         <Grid
           container
           direction="row"
           justifyContent="left"
           alignItems="center"
         >
-          <MainTitle />
-          <Occupation />
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <MainTitle />
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <Occupation />
+          </FormControl>
         </Grid>
-
         <Grid
           container
           direction="row"
           justifyContent="left"
           alignItems="center"
         >
-          <SubTitle />
-          <Affiliation />
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <SubTitle />
+          </FormControl>
+          <FormControl sx={{ m: 1, minWidth: 250 }}>
+            <Affiliation />
+          </FormControl>
         </Grid>
+        <FormControl sx={{ m: 1, minWidth: 250 }}>
+          <UploadImg />
+        </FormControl>
       </>
     );
   };
