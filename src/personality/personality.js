@@ -13,66 +13,55 @@ import Grid from "@mui/material/Grid";
 import UploadImg from "./components/upload-img";
 
 export default class Personality extends React.Component {
+  #design = null;
+  constructor(props) {
+    super(props);
+    this.#design = { m: 1, width: 225 };
+  }
   render = () => {
     return (
-      <>
-        <Grid
-          container
-          direction="row"
-          justifyContent="left"
-          alignItems="center"
-        >
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <Race />
-          </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <CharacterName />
-          </FormControl>
-        </Grid>
-        <Grid
-          container
-          direction="row"
-          justifyContent="left"
-          alignItems="center"
-        >
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <AbilityType />
-          </FormControl>
+      <Grid container>
+        <Grid>
+          <Grid>
+            <FormControl size="small" sx={this.#design}>
+              <Race />
+            </FormControl>
+            <FormControl sx={this.#design}>
+              <CharacterName />
+            </FormControl>
+          </Grid>
+          <Grid>
+            <FormControl size="small" sx={this.#design}>
+              <AbilityType />
+            </FormControl>
 
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <PlayerName />
+            <FormControl sx={this.#design}>
+              <PlayerName />
+            </FormControl>
+          </Grid>
+          <Grid>
+            <FormControl size="small" sx={this.#design}>
+              <MainTitle />
+            </FormControl>
+            <FormControl sx={this.#design}>
+              <Occupation />
+            </FormControl>
+          </Grid>
+          <Grid>
+            <FormControl size="small" sx={this.#design}>
+              <SubTitle />
+            </FormControl>
+            <FormControl sx={this.#design}>
+              <Affiliation />
+            </FormControl>
+          </Grid>
+        </Grid>
+        <Grid>
+          <FormControl size="small" sx={this.#design}>
+            <UploadImg />
           </FormControl>
         </Grid>
-        <Grid
-          container
-          direction="row"
-          justifyContent="left"
-          alignItems="center"
-        >
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <MainTitle />
-          </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <Occupation />
-          </FormControl>
-        </Grid>
-        <Grid
-          container
-          direction="row"
-          justifyContent="left"
-          alignItems="center"
-        >
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <SubTitle />
-          </FormControl>
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <Affiliation />
-          </FormControl>
-        </Grid>
-        <FormControl sx={{ m: 1, minWidth: 250 }}>
-          <UploadImg />
-        </FormControl>
-      </>
+      </Grid>
     );
   };
 }

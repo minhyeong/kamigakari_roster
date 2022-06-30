@@ -17,6 +17,7 @@ export default class Affiliation extends React.Component {
           maxRows={4}
           value={this.state.affiliation}
           onChange={(e) => this.setState({ affiliation: e.target.value })}
+          size="small"
         />
       </>
     );

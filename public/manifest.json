@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "kamisusuki",
-  "short_name": "kamisusuki",
+  "name": "shirushi",
+  "short_name": "shirushi",
 
   "default_locale": "ja_JP",
   "description": "kamigakari character sheet",

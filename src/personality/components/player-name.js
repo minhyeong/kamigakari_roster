@@ -17,6 +17,7 @@ export default class PlayerName extends React.Component {
           maxRows={4}
           value={this.state.name}
           onChange={(e) => this.setState({ name: e.target.value })}
+          size="small"
         />
       </>
     );

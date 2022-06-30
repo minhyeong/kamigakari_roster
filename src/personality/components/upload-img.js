@@ -32,7 +32,7 @@ export default class UploadImg extends React.Component {
             hidden
           />
           <IconButton color="primary" component="span">
-            <img src={this.state.myface} width="300" height="300" />
+            <img src={this.state.myface} width="200" height="200" />
           </IconButton>
         </label>
       </>

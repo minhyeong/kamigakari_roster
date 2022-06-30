@@ -17,6 +17,7 @@ export default class Occupation extends React.Component {
           maxRows={4}
           value={this.state.occupation}
           onChange={(e) => this.setState({ occupation: e.target.value })}
+          size="small"
         />
       </>
     );
