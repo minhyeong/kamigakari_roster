@@ -2,7 +2,7 @@
 神我狩のキャラシ保管所を目指して☆
 
 ## 見た目
-![未来像](public/img/sintyoku.png)
+![進捗](public/img/sintyoku.png)
 
 ## 課題
 - コンポーネント配置の調整
