@@ -4,43 +4,22 @@ import MenuItem from "@mui/material/MenuItem";
 import ListSubheader from "@mui/material/ListSubheader";
 import Select from "@mui/material/Select";
 
-export default class Race extends React.Component {
-  #race = {
-    basis: "基本",
-    b_1: "封神",
-    b_2: "夜魔",
-    b_3: "半妖",
-    b_4: "魔術師",
-    b_5: "人間",
-    requiem: "神魂のレクイエム",
-    r_1: "竜王",
-    r_2: "神霊",
-    r_3: "英魂",
-    damocles: "ダモクレスの機神",
-    d_1: "サイボーグ",
-    d_2: "魔眼",
-    d_3: "マレビト",
-    guardians: "四神ガーディアンズ",
-    g_1: "サキミタマ",
-    exodus: "神機エクソダス",
-    e_1: "アンドロイド",
-    e_2: "ホムンクルス",
-  };
-  #book = ["basis", "requiem", "damocles", "damocles", "guardians", "exodus"];
-  #raceMenu = [];
+import RaceData from "../../data/race.json";
 
+export default class Race extends React.Component {
+  #raceMenu = [];
   constructor(props) {
     super(props);
-
     this.state = { race: "" };
 
-    for (let i in this.#race) {
-      if (this.#book.includes(i)) {
-        this.#raceMenu.push(<ListSubheader>{this.#race[i]}</ListSubheader>);
+    const raceData = Object.keys(RaceData[0]);
+
+    for (let i = 0; i < raceData.length; ++i) {
+      const race = raceData[i];
+      if (RaceData[0][race] == "None") {
+        this.#raceMenu.push(<ListSubheader>{race}</ListSubheader>);
       } else {
-        this.#raceMenu.push(
-          <MenuItem value={this.#race[i]}>{this.#race[i]}</MenuItem>
-        );
+        this.#raceMenu.push(<MenuItem value={race}>{race}</MenuItem>);
       }
     }
   }

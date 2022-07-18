@@ -9,6 +9,7 @@ import Paper from "@mui/material/Paper";
 
 export default class MainStatus extends React.Component {
   #rows = null;
+  #jsonData = null;
   constructor(props) {
     super(props);
     this.updataStatus();
@@ -16,7 +17,7 @@ export default class MainStatus extends React.Component {
 
   updataStatus = () => {
     this.#rows = [
-      this.createData("", 10, 20, 30, 40, 50),
+      this.createData("種族補正", 10, 20, 30, 40, 50),
       this.createData("職業補正", 10, 20, 30, 40, 50),
       this.createData("装備補正", 10, 20, 30, 40, 50),
       this.createData("タレント補正", 10, 20, 30, 40, 50),
