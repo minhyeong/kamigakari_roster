@@ -18,7 +18,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 export default class Personality extends React.Component {
   #design = null;
   #theme = null;
-
   constructor(props) {
     super(props);
     this.#design = { m: 1, width: 220 };

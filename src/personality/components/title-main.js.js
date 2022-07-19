@@ -16,10 +16,16 @@ export default class MainTitle extends React.Component {
 
     for (let i = 0; i < titleData.length; ++i) {
       const title = titleData[i];
-      if (TitleData[0][title] == "None") {
-        this.#titleMenu.push(<ListSubheader>{title}</ListSubheader>);
+      if (TitleData[0][title] === "None") {
+        this.#titleMenu.push(
+          <ListSubheader key={title}>{title}</ListSubheader>
+        );
       } else {
-        this.#titleMenu.push(<MenuItem value={title}>{title}</MenuItem>);
+        this.#titleMenu.push(
+          <MenuItem key={title} value={title}>
+            {title}
+          </MenuItem>
+        );
       }
     }
   }

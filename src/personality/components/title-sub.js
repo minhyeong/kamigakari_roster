@@ -4,40 +4,27 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import ListSubheader from "@mui/material/ListSubheader";
 
-export default class SubTitle extends React.Component {
-  #title = {
-    battle: "戦闘系",
-    b_1: "アークスレイヤー",
-    b_2: "ドラゴンキャリア",
-    b_3: "ゴッドハンド",
-    b_4: "レジオン",
-    b_5: "ソウルイーター",
-    general: "汎用系",
-    g_1: "ダークハンター",
-    g_2: "エレメンタルアデプト",
-    g_3: "コントラクター",
-    g_4: "レガシーユーザー",
-    g_5: "マスタリィ",
-    sorcery: "魔導系",
-    s_1: "エルダーメイジ",
-    s_2: "デジタルソーサラー",
-    s_3: "ディバイントーカー",
-    s_4: "タイムウィザード",
-    s_5: "ラストクリエイター",
-  };
-  #type = ["battle", "general", "sorcery"];
-  #titleMenu = [];
+import TitleData from "../../data/title.json";
 
+export default class SubTitle extends React.Component {
+  #titleMenu = [];
   constructor(props) {
     super(props);
     this.state = { title: "" };
 
-    for (let i in this.#title) {
-      if (this.#type.includes(i)) {
-        this.#titleMenu.push(<ListSubheader>{this.#title[i]}</ListSubheader>);
+    const titleData = Object.keys(TitleData[0]);
+
+    for (let i = 0; i < titleData.length; ++i) {
+      const title = titleData[i];
+      if (TitleData[0][title] === "None") {
+        this.#titleMenu.push(
+          <ListSubheader key={title}>{title}</ListSubheader>
+        );
       } else {
         this.#titleMenu.push(
-          <MenuItem value={this.#title[i]}>{this.#title[i]}</MenuItem>
+          <MenuItem key={title} value={title}>
+            {title}
+          </MenuItem>
         );
       }
     }

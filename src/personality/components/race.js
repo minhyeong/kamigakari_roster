@@ -16,10 +16,14 @@ export default class Race extends React.Component {
 
     for (let i = 0; i < raceData.length; ++i) {
       const race = raceData[i];
-      if (RaceData[0][race] == "None") {
-        this.#raceMenu.push(<ListSubheader>{race}</ListSubheader>);
+      if (RaceData[0][race] === "None") {
+        this.#raceMenu.push(<ListSubheader key={race}>{race}</ListSubheader>);
       } else {
-        this.#raceMenu.push(<MenuItem value={race}>{race}</MenuItem>);
+        this.#raceMenu.push(
+          <MenuItem key={race} value={race}>
+            {race}
+          </MenuItem>
+        );
       }
     }
   }

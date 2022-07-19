@@ -21,10 +21,6 @@ const rows = [
 ];
 
 export default class SubStatus extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render = () => {
     return (
       <>
