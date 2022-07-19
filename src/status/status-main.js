@@ -14,6 +14,22 @@ export default class MainStatus extends React.Component {
     this.#updataStatus();
   }
 
+  updateRaceData = (status) => {
+    if (status === "None") {
+      this.#rows[0].str = 0;
+      this.#rows[0].dex = 0;
+      this.#rows[0].int = 0;
+      this.#rows[0].spr = 0;
+      this.#rows[0].luk = 0;
+    } else {
+      this.#rows[0].str = status["体"];
+      this.#rows[0].dex = status["敏"];
+      this.#rows[0].int = status["知"];
+      this.#rows[0].spr = status["精"];
+      this.#rows[0].luk = status["幸"];
+    }
+  };
+
   #updataStatus = () => {
     this.#rows = [
       this.#createData("種族補正", 0, 0, 0, 0, 0),
@@ -25,14 +41,14 @@ export default class MainStatus extends React.Component {
     ];
   };
 
-  #createData = (name, STR, DEX, INT, SPR, LUK) => {
+  #createData = (name, str, dex, int, spr, luk) => {
     return {
       name,
-      STR,
-      DEX,
-      INT,
-      SPR,
-      LUK,
+      str,
+      dex,
+      int,
+      spr,
+      luk,
     };
   };
 
@@ -60,11 +76,11 @@ export default class MainStatus extends React.Component {
                   <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell>
-                  <TableCell align="right">{row.STR}</TableCell>
-                  <TableCell align="right">{row.DEX}</TableCell>
-                  <TableCell align="right">{row.INT}</TableCell>
-                  <TableCell align="right">{row.SPR}</TableCell>
-                  <TableCell align="right">{row.LUK}</TableCell>
+                  <TableCell align="right">{row.str}</TableCell>
+                  <TableCell align="right">{row.dex}</TableCell>
+                  <TableCell align="right">{row.int}</TableCell>
+                  <TableCell align="right">{row.spr}</TableCell>
+                  <TableCell align="right">{row.luk}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
