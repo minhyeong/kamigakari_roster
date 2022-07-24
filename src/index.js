@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Personality from "./personality/personality";
-import MainStatus from "./status/status-main";
+import TestStatus from "./status/test-status";
 
-const Root = () => {
+const Root = (props) => {
   return (
     <>
       <Personality />
-      <MainStatus />
+      <TestStatus />
     </>
   );
 };

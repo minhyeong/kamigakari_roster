@@ -1,7 +1,7 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 
-const PlayerName = () => {
+const PlayerName = (props) => {
   let [plname, setPlName] = React.useState("");
   return (
     <>

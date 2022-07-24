@@ -22,7 +22,7 @@ const theme = createTheme({
   },
 });
 
-const Personality = () => {
+const Personality = (props) => {
   return (
     <Grid container>
       <ThemeProvider theme={theme}>

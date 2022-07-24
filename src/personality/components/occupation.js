@@ -1,7 +1,7 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 
-const Occupation = () => {
+const Occupation = (props) => {
   let [occ, setOcc] = React.useState("");
   return (
     <>

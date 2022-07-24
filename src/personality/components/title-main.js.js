@@ -6,7 +6,7 @@ import ListSubheader from "@mui/material/ListSubheader";
 
 import TitleData from "../../data/title.json";
 
-const MainTitle = () => {
+const MainTitle = (props) => {
   let [title, setTitle] = React.useState("");
   const titleData = Object.keys(TitleData[0]);
   let titleMenu = [];

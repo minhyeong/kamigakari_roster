@@ -1,7 +1,7 @@
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 
-const UploadImg = () => {
+const UploadImg = (props) => {
   let [img, setImg] = React.useState(
     `${process.env.PUBLIC_URL}/img/myface.png`
   );

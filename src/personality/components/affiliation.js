@@ -1,7 +1,7 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 
-const Affiliation = () => {
+const Affiliation = (props) => {
   let [aff, setAff] = React.useState("");
   return (
     <>

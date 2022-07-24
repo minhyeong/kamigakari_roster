@@ -3,7 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 
-const AbilityType = () => {
+const AbilityType = (props) => {
   let [type, setType] = React.useState("");
   return (
     <>

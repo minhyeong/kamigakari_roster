@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 
 import RaceData from "../../data/race.json";
 
-const Race = () => {
+const Race = (props) => {
   let [race, setRace] = React.useState("");
   const raceData = Object.keys(RaceData[0]);
   let raceMenu = [];
