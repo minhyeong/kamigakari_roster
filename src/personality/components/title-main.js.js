@@ -6,44 +6,42 @@ import ListSubheader from "@mui/material/ListSubheader";
 
 import TitleData from "../../data/title.json";
 
-export default class MainTitle extends React.Component {
-  #titleMenu = [];
-  constructor(props) {
-    super(props);
-    this.state = { title: "" };
+const MainTitle = () => {
+  let [title, setTitle] = React.useState("");
+  const titleData = Object.keys(TitleData[0]);
+  let titleMenu = [];
 
-    const titleData = Object.keys(TitleData[0]);
-
-    for (let i = 0; i < titleData.length; ++i) {
-      const title = titleData[i];
-      if (TitleData[0][title] === "None") {
-        this.#titleMenu.push(
-          <ListSubheader key={title}>{title}</ListSubheader>
-        );
-      } else {
-        this.#titleMenu.push(
-          <MenuItem key={title} value={title}>
-            {title}
-          </MenuItem>
-        );
-      }
+  for (let i = 0; i < titleData.length; ++i) {
+    const title = titleData[i];
+    if (TitleData[0][title] === "None") {
+      titleMenu.push(<ListSubheader key={title}>{title}</ListSubheader>);
+    } else {
+      titleMenu.push(
+        <MenuItem key={title} value={title}>
+          {title}
+        </MenuItem>
+      );
     }
   }
 
-  render = () => {
-    return (
-      <>
-        <InputLabel id="demo-simple-select-label">メイン称号</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={this.state.type}
-          label="メイン称号"
-          onChange={(e) => this.setState({ type: e.target.value })}
-        >
-          {this.#titleMenu}
-        </Select>
-      </>
-    );
+  const onChange = (e) => {
+    setTitle((title = e.target.value));
   };
-}
+
+  return (
+    <>
+      <InputLabel id="demo-simple-select-label">メイン称号</InputLabel>
+      <Select
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        value={title}
+        label="メイン称号"
+        onChange={(e) => onChange(e)}
+      >
+        {titleMenu}
+      </Select>
+    </>
+  );
+};
+
+export default MainTitle;

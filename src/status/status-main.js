@@ -11,7 +11,8 @@ export default class MainStatus extends React.Component {
   #rows = null;
   constructor(props) {
     super(props);
-    this.#updataStatus();
+    this.state = { test: "test" };
+    this.#initStatus();
   }
 
   updateRaceData = (status) => {
@@ -30,7 +31,7 @@ export default class MainStatus extends React.Component {
     }
   };
 
-  #updataStatus = () => {
+  #initStatus = () => {
     this.#rows = [
       this.#createData("種族補正", 0, 0, 0, 0, 0),
       this.#createData("職業補正", 0, 0, 0, 0, 0),
@@ -55,6 +56,7 @@ export default class MainStatus extends React.Component {
   render = () => {
     return (
       <>
+        {this.state.test}
         <TableContainer component={Paper}>
           <Table sx={{ width: 500 }} aria-label="simple table">
             <TableHead>

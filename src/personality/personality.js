@@ -15,65 +15,60 @@ import UploadImg from "./components/upload-img";
 import Grid from "@mui/material/Grid";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-export default class Personality extends React.Component {
-  #design = null;
-  #theme = null;
-  constructor(props) {
-    super(props);
-    this.#design = { m: 1, width: 220 };
-    this.#theme = createTheme({
-      typography: {
-        fontSize: 12,
-      },
-    });
-  }
+const design = { m: 1, width: 220 };
+const theme = createTheme({
+  typography: {
+    fontSize: 12,
+  },
+});
 
-  render = () => {
-    return (
-      <Grid container>
-        <ThemeProvider theme={this.#theme}>
+const Personality = () => {
+  return (
+    <Grid container>
+      <ThemeProvider theme={theme}>
+        <Grid>
           <Grid>
-            <Grid>
-              <FormControl size="small" sx={this.#design}>
-                <Race />
-              </FormControl>
-              <FormControl sx={this.#design}>
-                <CharacterName />
-              </FormControl>
-            </Grid>
-            <Grid>
-              <FormControl size="small" sx={this.#design}>
-                <AbilityType />
-              </FormControl>
-
-              <FormControl sx={this.#design}>
-                <PlayerName />
-              </FormControl>
-            </Grid>
-            <Grid>
-              <FormControl size="small" sx={this.#design}>
-                <MainTitle />
-              </FormControl>
-              <FormControl sx={this.#design}>
-                <Occupation />
-              </FormControl>
-            </Grid>
-            <Grid>
-              <FormControl size="small" sx={this.#design}>
-                <SubTitle />
-              </FormControl>
-              <FormControl sx={this.#design}>
-                <Affiliation />
-              </FormControl>
-            </Grid>
-          </Grid>
-          <Grid>
-            <FormControl size="small" sx={this.#design}>
-              <UploadImg />
+            <FormControl size="small" sx={design}>
+              <Race />
+            </FormControl>
+            <FormControl sx={design}>
+              <CharacterName />
             </FormControl>
           </Grid>
-        </ThemeProvider>
-      </Grid>
-    );
-  };
-}
+          <Grid>
+            <FormControl size="small" sx={design}>
+              <AbilityType />
+            </FormControl>
+
+            <FormControl sx={design}>
+              <PlayerName />
+            </FormControl>
+          </Grid>
+          <Grid>
+            <FormControl size="small" sx={design}>
+              <MainTitle />
+            </FormControl>
+            <FormControl sx={design}>
+              <Occupation />
+            </FormControl>
+          </Grid>
+          <Grid>
+            <FormControl size="small" sx={design}>
+              <SubTitle />
+            </FormControl>
+            <FormControl sx={design}>
+              <Affiliation />
+            </FormControl>
+          </Grid>
+        </Grid>
+        <Grid>
+          <FormControl size="small" sx={design}>
+            <UploadImg />
+          </FormControl>
+        </Grid>
+      </ThemeProvider>
+    </Grid>
+  );
+};
+
+export default Personality;
